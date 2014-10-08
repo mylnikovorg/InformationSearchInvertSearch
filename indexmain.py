@@ -4,7 +4,6 @@ __author__ = 'root'
 import re
 import glob
 import os
-
 import pymorphy2
 
 
