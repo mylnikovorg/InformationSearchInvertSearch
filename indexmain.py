@@ -32,7 +32,7 @@ l1 = list(zip(termList, docLists))
 with open('index.inv', 'wb') as f:
     pickle.dump(l1, f)
 
-print("The index successfully saved")
+print("The index successfully saved to file 'index.inv'")
 # f.close() # you can omit
 # for i in range(len(termList)):
 # print(i,termList[i], docLists[i], type(docLists[i]))
