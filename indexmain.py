@@ -5,6 +5,7 @@ import re
 import glob
 import os
 import pymorphy2
+import string
 
 
 morph = pymorphy2.MorphAnalyzer()
@@ -13,7 +14,8 @@ termList, docLists = [], []
 for file in glob.glob("*.txt"):
     fileone = open(file, 'r')
     for line in fileone:
-        line = re.sub(r"[-./,:;><–#?!=\[\]()\'\"\&\\„”»«]", "", line)
+        print(line)
+        line = re.sub(r"[" + string.punctuation + "„”]", "", line)
         for word in line.split():
             term = morph.parse(word)[0].normal_form
             if term in termList:
@@ -37,6 +39,6 @@ print("The index successfully saved to file 'index.inv'")
 # print(i,termList[i], docLists[i], type(docLists[i]))
 
 # print (fileone.read())
-# print(file)
+# print(l1)
 
 # print( morph.parse('автомобили')[0].normal_form)
