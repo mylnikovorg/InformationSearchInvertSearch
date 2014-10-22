@@ -72,7 +72,6 @@ for i in sys.stdin:
                         if len(temp_list) > 0:
                             temp_dict[this_doc] = temp_list
                     elif "-" in word[0]:
-
                         temp_list = set(
                             [second for second in array_second for first in array_first if
                              first - second <= int(word[0][1])])
@@ -81,7 +80,7 @@ for i in sys.stdin:
                     else:
                         temp_list = set(
                             [second for second in array_second for first in array_first if
-                             abs(second - first) == int(word[0])])
+                             abs(second - first) <= int(word[0])])
                         if len(temp_list) > 0:
                             temp_dict[this_doc] = temp_list
 
